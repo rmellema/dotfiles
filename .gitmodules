@@ -1,0 +1,15 @@
+[submodule ".vim/pack/mypackages/start/t_comment"]
+	path = .vim/pack/mypackages/start/t_comment
+	url = https://github.com/tomtom/tcomment_vim
+[submodule ".vim/pack/mypackages/start/vim-fugitive"]
+	path = .vim/pack/mypackages/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/mypackages/start/ale"]
+	path = .vim/pack/mypackages/start/ale
+	url = https://github.com/w0rp/ale
+[submodule ".vim/pack/mypackages/start/pt_black"]
+	path = .vim/pack/mypackages/start/pt_black
+	url = https://github.com/yantze/pt_black
+[submodule ".vim/pack/mypackages/start/jellybeans.vim"]
+	path = .vim/pack/mypackages/start/jellybeans.vim
+	url = https://github.com/nanotech/jellybeans.vim
