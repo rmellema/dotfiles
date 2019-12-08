@@ -1,1 +1,27 @@
-skim.sh
+#!/usr/bin/env bash
+# Open a file in fullscreen in Skim
+
+if [ $# != 1 ];then
+    echo "Wrong number of arguments"
+    echo "Usage:"
+    echo "\t$0 FILE"
+fi;
+
+if [[ $1 = /* ]]; then
+    FILE=$1
+else
+    FILE=$PWD/$1
+fi;
+
+osascript <<EOF
+tell application "Skim"
+    set _file to open "$FILE" as POSIX file
+    activate
+    delay 1
+    tell application "System Events"
+        tell front window of (first process whose name is "Skim")
+            set value of attribute "AXFullScreen" to true
+        end tell
+    end tell
+end tell
+EOF
