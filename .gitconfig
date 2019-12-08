@@ -1,0 +1,23 @@
+[user]
+	name = rmellema
+	email = rene.mellema@gmail.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[core]
+	editor = vim
+	excludesfile = /Users/rene/.gitignore_global
+	pager = vimpager
+[merge]
+	tool = vimdiff
+[color]
+	ui = true
+	pager = false
+[alias]
+	staged = diff --cached
+	vdiff = "!f() { vim -c 'Gdiff' ${GIT_PREFIX:+$GIT_PREFIX/}$1; };f"
+	mdiff = "!f() { mvim -c 'Gdiff' ${GIT_PREFIX:+$GIT_PREFIX/}$1; };f"
+	aliases = config --get-regexp '^alias\\.'
+[grep]
+	lineNumber = true

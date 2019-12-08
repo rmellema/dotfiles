@@ -1,0 +1,19 @@
+# Mac files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Vim lock files
+.*.swp
+.*.swo
+
+# Tags file
+tags
+
+# Gem lock files
+Gemfile.lock
+
+#Intellij IDEA
+.idea
