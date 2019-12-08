@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+info() {
+	ioreg -n AppleSmartBattery -r | grep '=' |
+		sed 's/[[:space:]]*"\([[:alpha:]]*\)" = \([[:alpha:]]*\)/\1 \2/g'
+}
+
+percent() {
+	info | grep -i -e MAxCapacity -e CurrentCapacity | cut -d ' ' -f 2 | sort -n \
+		| tr '\n' ' ' | awk '{ printf("%d", $1/$2*100) }'
+}
+
+level() {
+	LEVEL=`percent`
+	if [ $LEVEL -gt 50 ]; then
+		COLOR='\033[0;32m'
+	elif [ $LEVEL -gt 20 ]; then
+		COLOR='\033[0;33m'
+	else
+		COLOR='\033[0;31m'
+	fi
+	printf '%b%3d \033[0;0m%%\n' $COLOR $LEVEL
+}
+
+CMD=$1
+shift
+$CMD $@

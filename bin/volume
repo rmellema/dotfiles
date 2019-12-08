@@ -1,0 +1,36 @@
+#!/bin/bash
+UNI=false
+MUTE=false
+
+while getopts "um" opt; do
+	case $opt in
+		u) UNI=true;;
+		m) MUTE=true;;
+		h) printHelp; exit 0;;
+		\?) echo "Invalid option: -$OPTARG" >&2; exit 1;;
+	esac
+done
+shift $((OPTIND-1))
+
+if [[ $MUTE == "true" ]]; then
+	osascript -e 'set volume output muted (not (get output muted of (get volume settings)))'
+elif [[ $# -eq 1 ]]; then
+	osascript -e "set volume output volume $1"
+else
+	VOL=`osascript -e 'output volume of (get volume settings)'`
+	MUTED=`osascript -e 'output muted of (get volume settings)'`
+	if [[ $UNI == "true" ]]; then
+		if [ $MUTED == "true" ]; then
+			echo "🔇 $VOL"
+		else
+			echo "🔈 $VOL"
+		fi
+	else
+		if [ $MUTED == "true" ]; then
+			echo "muted $VOL"
+		else
+			echo "$VOL"
+		fi
+	fi
+fi
+
