@@ -6,7 +6,7 @@ info() {
 }
 
 percent() {
-	info | grep -i -e MAxCapacity -e CurrentCapacity | cut -d ' ' -f 2 | sort -n \
+	info | grep -i -e MAxCapacity -e CurrentCapacity | cut -d ' ' -f 2 | sort -n -u \
 		| tr '\n' ' ' | awk '{ printf("%d", $1/$2*100) }'
 }
 
