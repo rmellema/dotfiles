@@ -8,3 +8,4 @@ export LANG=en_GB.UTF-8
 export LC_CTYPE=en_GB.UTF-8
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias tree='broot --cmd ":pt"'
