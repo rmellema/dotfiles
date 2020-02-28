@@ -6,7 +6,7 @@ project_name: <%= @args[0] %>
 <% main = (@args[1] ? @args[1] : 'main') + '.tex' %>
 
 # Runs before everything. Use it to start daemons etc.
-pre: touch <%= main %>
+on_project_start: touch <%= main %>
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
