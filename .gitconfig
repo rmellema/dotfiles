@@ -21,3 +21,5 @@
 	aliases = config --get-regexp '^alias\\.'
 [grep]
 	lineNumber = true
+[pull]
+	rebase = false
