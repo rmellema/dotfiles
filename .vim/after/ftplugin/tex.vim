@@ -7,10 +7,10 @@ setlocal softtabstop=4
 " Enable syntax folding
 " setlocal foldmethod=syntax
 
-" set the maximal length of a line to 100 characters, so the lines on the
+" set the maximal length of a line to ~100 characters, so the lines on the
 " screen sort of match the lines in the pdf
-setlocal cc=101
-setlocal textwidth=101
+setlocal cc=95
+setlocal textwidth=95
 setlocal formatoptions+=t
 setlocal spell
 

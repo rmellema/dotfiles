@@ -1,13 +1,13 @@
 " Use same indent as previous line
 setlocal expandtab
 " With a tabsize of two
-setlocal shiftwidth=4
-setlocal softtabstop=4
+setlocal shiftwidth=3
+setlocal softtabstop=3
 
 let g:pandoc_command = "pandoc -f markdown -o "
 
 " Make the text wrap automagically
-setlocal textwidth=80
+setlocal textwidth=90
 setlocal formatoptions+=t
 setlocal spell
 

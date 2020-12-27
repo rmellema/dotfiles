@@ -50,6 +50,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufNewFile,BufRead *.tikz set filetype=tex
 " I always use LaTeX, so lets make that the default
 let g:tex_flavor = "latex"
+" Load hy module only if inside a hy file
+au BufNewFile,BufRead *.hy packadd vim-hy
 
 " My default writing language is English, so lets make that the language for
 " spellchecking
@@ -64,8 +66,9 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" Color the 80th column red
-set cc=81
+" Color the 90th column red
+set cc=91
+set textwidth=90
 hi ColorColumn guibg=red
 
 " Setup a tags file for use
