@@ -13,7 +13,7 @@ setlocal spell
 
 " Lets build a Pandoc command!
 function! PandocFunc(ext)
-	let resFile = expand("%:p:r") . "." . a:ext
+	let resFile = expand("%:.:r") . "." . a:ext
 	"silent !pandoc -f markdown -o %:t:r.a:ext %:t
 	execute "silent !".g:pandoc_command.resFile." ".bufname("%")
 	redraw!
