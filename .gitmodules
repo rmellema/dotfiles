@@ -16,3 +16,6 @@
 [submodule ".vim/pack/mypackages/opt/vim-hy"]
 	path = .vim/pack/mypackages/opt/vim-hy
 	url = https://github.com/hylang/vim-hy.git
+[submodule ".vim/pack/mypackages/start/julia-vim"]
+	path = .vim/pack/mypackages/start/julia-vim
+	url = https://github.com/JuliaEditorSupport/julia-vim.git
