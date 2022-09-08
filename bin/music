@@ -1,7 +1,7 @@
 #!/usr/bin/osascript
 set res to ""
-if application "iTunes" is running then
-	tell application "iTunes"
+if application "Music" is running then
+	tell application "Music"
 		if (get player state) = playing then
 			set res to "♪ " & (get the name of current track)
 		end if
@@ -15,4 +15,3 @@ if application "Spotify" is running then
 	end tell
 end if
 return res
-

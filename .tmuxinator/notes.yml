@@ -1,7 +1,7 @@
 # /Users/rene/.tmuxinator/notes.yml
 
 name: notes
-root: ~/socially-aware-notes/
+root: ~/Documents/socially-aware-notes/
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
